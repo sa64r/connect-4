@@ -1,0 +1,13 @@
+GET /scores - pull scores (returns JSON)
+POST /scores - increment score (upload JSON)
+PUT /scores - update scores (upload JSON)
+DELETE /scores - reset scores (no data parsed)
+
+TODO:
+- front end animations
+- accessibility
+✔ responsive for mobile
+- Documentation
+- unit test for rendering
+- unit test for API
+- error handling

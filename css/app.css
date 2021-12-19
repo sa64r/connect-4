@@ -1,0 +1,124 @@
+body {
+    /* text-align: center; */
+    background:#fff;
+}
+
+div#grid{
+    font-size: 10px;
+    background-color: blue;
+    padding: 10px;
+    box-shadow: 5px 5px 3px darkblue;
+}
+
+.column {
+    width: 100px;
+    height:100px;
+    margin: 0px;
+    border: 5px blue solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    background-color: #fff;
+    box-shadow: inset 5px 5px 3px darkblue;
+}
+
+.column:hover{
+    background-color: lightblue;
+}
+.emptyCounter{
+    background-color: #fff;
+}
+.redCounter{
+    background-color:red;
+}
+.yellowCounter{
+    background-color: yellow;
+}
+
+.row {
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.marker {
+    width: 50px;
+    height: 50px;
+}
+
+.endgame-display{
+    box-shadow: 5px 5px 20px grey;
+}
+
+#winner-display, #draw-display{
+    position: absolute;
+}
+
+/* On screens that are 992px wide or less, the background color is blue */
+@media screen and (max-width: 992px) {
+    .column {
+        width: 70px;
+        height:70px;
+        margin: 0px;
+        border: 5px blue solid;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+        background-color: #fff;
+        box-shadow: inset 5px 5px 3px darkblue;
+    }
+    .column:hover{
+        background-color: lightblue;
+    }
+    .emptyCounter{
+        background-color: #fff;
+    }
+    .redCounter{
+        background-color:red;
+    }
+    .yellowCounter{
+        background-color: yellow;
+    }
+    .card{
+        margin-top: 20px;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, the background color is olive */
+  @media screen and (max-width: 600px) {
+    .column {
+        width: 45px;
+        height:45px;
+        margin: 0px;
+        border: 5px blue solid;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+        background-color: #fff;
+        box-shadow: inset 5px 5px 3px darkblue;
+    }
+    .column:hover{
+        background-color: lightblue;
+    }
+    .emptyCounter{
+        background-color: #fff;
+    }
+    .redCounter{
+        background-color:red;
+    }
+    .yellowCounter{
+        background-color: yellow;
+    }
+    .card{
+        margin-top: 20px;
+    }
+  }
+
+    

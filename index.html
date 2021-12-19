@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</head>
+
+<body onload="initialize()">
+    <section class="d-flex justify-content-evenly mt-3 flex-wrap">
+        <div id="grid" class="">
+            <div class="row" id="row-0">
+                <div class="column" id="row-0-column-0"></div>
+                <div class="column" id="row-0-column-1"></div>
+                <div class="column" id="row-0-column-2"></div>
+                <div class="column" id="row-0-column-3"></div>
+                <div class="column" id="row-0-column-4"></div>
+                <div class="column" id="row-0-column-5"></div>
+                <div class="column" id="row-0-column-6"></div>
+            </div>
+            <div class="row" id="row-1">
+                <div class="column" id="row-1-column-0"></div>
+                <div class="column" id="row-1-column-1"></div>
+                <div class="column" id="row-1-column-2"></div>
+                <div class="column" id="row-1-column-3"></div>
+                <div class="column" id="row-1-column-4"></div>
+                <div class="column" id="row-1-column-5"></div>
+                <div class="column" id="row-1-column-6"></div>
+            </div>
+            <div class="row" id="row-2">
+                <div class="column" id="row-2-column-0"></div>
+                <div class="column" id="row-2-column-1"></div>
+                <div class="column" id="row-2-column-2"></div>
+                <div class="column" id="row-2-column-3"></div>
+                <div class="column" id="row-2-column-4"></div>
+                <div class="column" id="row-2-column-5"></div>
+                <div class="column" id="row-2-column-6"></div>
+            </div>
+            <div class="row" id="row-3">
+                <div class="column" id="row-3-column-0"></div>
+                <div class="column" id="row-3-column-1"></div>
+                <div class="column" id="row-3-column-2"></div>
+                <div class="column" id="row-3-column-3"></div>
+                <div class="column" id="row-3-column-4"></div>
+                <div class="column" id="row-3-column-5"></div>
+                <div class="column" id="row-3-column-6"></div>
+            </div>
+            <div class="row" id="row-4">
+                <div class="column" id="row-4-column-0"></div>
+                <div class="column" id="row-4-column-1"></div>
+                <div class="column" id="row-4-column-2"></div>
+                <div class="column" id="row-4-column-3"></div>
+                <div class="column" id="row-4-column-4"></div>
+                <div class="column" id="row-4-column-5"></div>
+                <div class="column" id="row-4-column-6"></div>
+            </div>
+            <div class="row" id="row-5">
+                <div class="column" id="row-5-column-0"></div>
+                <div class="column" id="row-5-column-1"></div>
+                <div class="column" id="row-5-column-2"></div>
+                <div class="column" id="row-5-column-3"></div>
+                <div class="column" id="row-5-column-4"></div>
+                <div class="column" id="row-5-column-5"></div>
+                <div class="column" id="row-5-column-6"></div>
+            </div>
+        </div>
+        <aside class="card bg-light">
+            <div class="card-body">
+                <h1>The Best Connect 4 Game</h1>
+                <form>
+                    <div class="form-group text-left">
+                        <label for="red-name">🔴 Red Player Name:</label>
+                        <input id="red-name" type="text" class="name-input form-control" placeholder="Red">
+                    </div>
+                    <div class="form-group">
+                        <label for="yellow-name">🟡 Yellow Player Name:</label>
+                        <input id="yellow-name" type="text" class="name-input form-control" placeholder="Yellow">
+                    </div>
+                    <input id="set-names-button" type="submit" class="btn btn-primary mt-2" value="Set Names"></input>
+                </form>
+                <div id="scores" class="mt-4">
+                    <h4>Score</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><span id="red-score-name">Red</span> 🔴</th>
+                                <th><span id="yellow-score-name">Yellow</span> 🟡</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="red-score">0</td>
+                                <td id="yellow-score">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="control-panel">
+                    <button class="btn btn-success" id="new-round-button">New Round</button>
+                    <button class="btn btn-danger" id="restart-button">Restart</button>
+                    <a class="btn btn-primary" href="/docs">Gimme them APIs</a>
+                </div>
+                <div id="turn-indicator">
+                    <h2 class="mt-3"><span id="turn-indicator-color">🔴 RED'S</span> TURN</h2>
+                </div>
+            </div>
+            <!-- <h1>Who's Winning</h1>
+            <input id="red-button" type="button" value="Red">
+            <input id="yellow-button" type="button" value="Yellow"> -->
+            <h2 id="scores-display"></h2>
+        </aside>
+
+        <div id="winner-display" class="mt-4 bg-light p-5 rounded endgame-display d-flex flex-column d-none">
+            <h1>THE WINNER IS <span id="winner-name">YELLOW</span></h1>
+            <img src="https://media.giphy.com/media/a0h7sAqON67nO/giphy.gif" alt="">
+            <br>
+            <button class="btn btn-secondary close-endgame-display-button">❌</button>
+        </div>
+        <div id="draw-display" class="mt-4 bg-light p-5 rounded endgame-display d-flex flex-column d-none">
+            <h1>IT'S A DRAW</h1>
+            <img src="https://c.tenor.com/wyfhYqF1tJIAAAAC/mark-wahlberg-wahlberg.gif" alt="">
+            <br>
+            <button class="btn btn-secondary close-endgame-display-button">❌</button>
+        </div>
+    </section>
+
+    <script src="./js/front-end-stateful.js"></script>
+</body>
+
+</html>
